@@ -1,0 +1,16 @@
+# 🤖 Prime Khaled Bot
+
+## FEATURES
+- WhatsApp Bot (Baileys)
+- Modular command system
+- Economy system
+- Profile system
+
+## INSTALL
+npm install
+
+## RUN
+node index.js
+
+## DEPLOY
+Use Render / VPS / Heroku
