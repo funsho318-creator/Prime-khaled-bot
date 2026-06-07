@@ -75,11 +75,56 @@ Before starting, make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/Prime-Khaled-Bot
+git clone https://github.com/YOUR_GITHUB_USERNAME/Prime-Khaled-Bot.git
+cd Prime-Khaled-Bot
+Install Dependencies
+Bash
 npm install
+Start the Bot
+Bash
 node index.js
+📱 Link Your WhatsApp
+Open WhatsApp.
+Tap Settings.
+Select Linked Devices.
+Tap Link a Device.
+Choose Link with Phone Number.
+Enter the pairing code shown in the terminal.
+✅ Bot Successfully Connected
+Once connected, you'll see:
+Plain text
+🤖 Prime Khaled Bot Connected Successfully
+🚀 System Online
+🟢 Ready to Receive Commands
+👑 Developer
+Prime Khaled
+🤖 Bot Name
+Prime Khaled Bot
+⚡ Version
+Ultra Pro Edition
 📜 License
 
 This project is licensed under the MIT License.
 
 Copyright © 2026 Prime Khaled
+Prime Khaled Bot
+
+Copyright © 2026 Prime Khaled.
+All Rights Reserved.
+
+This software is provided for educational, automation, and community management purposes only.
+
+Users are responsible for complying with all applicable laws, regulations, and the Terms of Service of any platform on which this software is used, including WhatsApp.
+
+The developer of Prime Khaled Bot is not responsible for:
+- Misuse of the software
+- Account bans or restrictions
+- Data loss
+- Damages resulting from modifications or third-party plugins
+- Activities that violate platform policies or local laws
+
+By using this software, you agree that you assume full responsibility for how it is configured and operated.
+
+Prime Khaled Bot, its name, branding, logos, and custom content may not be copied, impersonated, sold, or redistributed as an official version without permission from the owner.
+
+For official releases and updates, use the authorized repository maintained by Prime Khaled.
