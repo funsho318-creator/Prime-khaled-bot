@@ -1,8 +1,6 @@
-
-// ==================================================
-// ⚡ ULTRA PRO v8 WHATSAPP BOT
-// 𓉳 𝗠𝗥 𓋹 𝐏𝐫𝐢𝐦𝐞 ᴋʜᴀ𝗹𝗲𝗱𓃵 BOT
-// ==================================================
+    // ======================================
+// 🤖 𓉳 𝗠𝗥 𓋹 𝐏𝐫𝐢𝐦𝐞 ᴋʜᴀ𝗹𝗲𝗱𓃵 BOT
+// ======================================
 
 const {
     default: makeWASocket,
@@ -10,20 +8,16 @@ const {
     DisconnectReason
 } = require("@whiskeysockets/baileys");
 
-const fs = require("fs");
 const axios = require("axios");
 
-// ===============================
-// CONFIG
-// ===============================
 const PREFIX = ".";
-const ownerNumber = "234XXXXXXXXXX"; // 🔴 CHANGE THIS
+const ownerNumber = "234XXXXXXXXXX"; // CHANGE THIS
 
 const BOT_NAME = "𓉳 𝗠𝗥 𓋹 𝐏𝐫𝐢𝐦𝐞 ᴋʜᴀ𝗹𝗲𝗱𓃵 BOT";
 
-// ===============================
-// DATABASE
-// ===============================
+// ======================================
+// DATABASE (IN MEMORY)
+// ======================================
 let db = {
     users: {},
     groups: {}
@@ -31,16 +25,16 @@ let db = {
 
 let cooldown = {};
 
-// ===============================
+// ======================================
 // HELPERS
-// ===============================
+// ======================================
 function getUser(id) {
     if (!db.users[id]) {
         db.users[id] = {
             xp: 0,
             level: 1,
             warns: 0,
-            banned: false
+            coins: 0
         };
     }
     return db.users[id];
@@ -51,7 +45,8 @@ function getGroup(id) {
         db.groups[id] = {
             antiLink: true,
             antiSpam: true,
-            welcome: true
+            welcome: true,
+            ai: false
         };
     }
     return db.groups[id];
@@ -69,9 +64,9 @@ function addXP(id) {
     return false;
 }
 
-// ===============================
+// ======================================
 // START BOT
-// ===============================
+// ======================================
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState("./auth");
 
@@ -97,9 +92,9 @@ async function startBot() {
         }
     });
 
-    // ===============================
+    // ======================================
     // MESSAGE HANDLER
-    // ===============================
+    // ======================================
     sock.ev.on("messages.upsert", async ({ messages }) => {
         const msg = messages[0];
         if (!msg.message) return;
@@ -112,12 +107,12 @@ async function startBot() {
             msg.message.extendedTextMessage?.text ||
             "";
 
-        const group = getGroup(jid);
         const user = getUser(sender);
+        const group = getGroup(jid);
 
-        // ===============================
+        // ======================================
         // XP SYSTEM
-        // ===============================
+        // ======================================
         if (!text.startsWith(PREFIX)) {
             const leveled = addXP(sender);
             if (leveled) {
@@ -127,26 +122,26 @@ async function startBot() {
             }
         }
 
-        // ===============================
-        // COOLDOWN ANTI-SPAM
-        // ===============================
+        // ======================================
+        // COOLDOWN (ANTI SPAM)
+        // ======================================
         const now = Date.now();
         if (cooldown[sender] && now - cooldown[sender] < 2000) return;
         cooldown[sender] = now;
 
-        // ===============================
+        // ======================================
         // ANTI LINK
-        // ===============================
+        // ======================================
         if (group.antiLink && text.includes("http")) {
             await sock.sendMessage(jid, { delete: msg.key });
             return sock.sendMessage(jid, {
-                text: "🚫 Links are not allowed here!"
+                text: "🚫 Links are not allowed!"
             });
         }
 
-        // ===============================
-        // COMMANDS
-        // ===============================
+        // ======================================
+        // COMMAND SYSTEM
+        // ======================================
         if (!text.startsWith(PREFIX)) return;
 
         const args = text.slice(PREFIX.length).trim().split(" ");
@@ -154,16 +149,16 @@ async function startBot() {
 
         const isOwner = sender.includes(ownerNumber);
 
-        // ===============================
+        // ======================================
         // OWNER COMMANDS
-        // ===============================
+        // ======================================
         if (cmd === "ping") {
             return sock.sendMessage(jid, { text: "🏓 Pong!" });
         }
 
         if (cmd === "shutdown") {
             if (!isOwner) return;
-            await sock.sendMessage(jid, { text: "🛑 Shutting down..." });
+            await sock.sendMessage(jid, { text: "🛑 Bot shutting down..." });
             process.exit();
         }
 
@@ -181,13 +176,13 @@ async function startBot() {
             group[key] = value;
 
             return sock.sendMessage(jid, {
-                text: `⚙️ ${key} updated to ${value}`
+                text: `⚙️ ${key} = ${value}`
             });
         }
 
-        // ===============================
+        // ======================================
         // PROFILE
-        // ===============================
+        // ======================================
         if (cmd === "profile") {
             return sock.sendMessage(jid, {
                 text: `
@@ -195,14 +190,15 @@ async function startBot() {
 
 Level: ${user.level}
 XP: ${user.xp}
+Coins: ${user.coins}
 Warnings: ${user.warns}
                 `
             });
         }
 
-        // ===============================
-        // FUN
-        // ===============================
+        // ======================================
+        // FUN COMMANDS
+        // ======================================
         if (cmd === "dice") {
             return sock.sendMessage(jid, {
                 text: `🎲 ${Math.floor(Math.random() * 6) + 1}`
@@ -211,22 +207,22 @@ Warnings: ${user.warns}
 
         if (cmd === "joke") {
             return sock.sendMessage(jid, {
-                text: "😂 I tried to catch a bug… but it ran away faster than my code!"
+                text: "😂 My code works… I just don’t know why!"
             });
         }
 
         if (cmd === "anime") {
             return sock.sendMessage(jid, {
-                text: `🎭 Anime search: ${args.join(" ")}`
+                text: `🎭 Anime: ${args.join(" ")}`
             });
         }
 
-        // ===============================
-        // MEDIA
-        // ===============================
+        // ======================================
+        // MEDIA SYSTEM
+        // ======================================
         if (cmd === "lyrics") {
             return sock.sendMessage(jid, {
-                text: `🎵 Lyrics for: ${args.join(" ")}`
+                text: `🎵 Lyrics: ${args.join(" ")}`
             });
         }
 
@@ -238,22 +234,40 @@ Warnings: ${user.warns}
 
         if (cmd === "sticker") {
             return sock.sendMessage(jid, {
-                text: "📌 Sticker feature needs image processing module"
+                text: "📌 Sticker engine requires image processing"
             });
         }
 
-        // ===============================
-        // AI (HOOK)
-        // ===============================
+        // ======================================
+        // AI SYSTEM (HOOK)
+        // ======================================
         if (cmd === "ai") {
+            const prompt = args.join(" ");
+
             return sock.sendMessage(jid, {
-                text: `🤖 AI:\n${args.join(" ")}\n\n(Connect OpenAI API)`
+                text: `🤖 AI RESPONSE:\n${prompt}\n\n(Connect OpenAI API here)`
             });
         }
 
-        // ===============================
-        // GROUP
-        // ===============================
+        // ======================================
+        // ECONOMY SYSTEM
+        // ======================================
+        if (cmd === "balance") {
+            return sock.sendMessage(jid, {
+                text: `💰 Coins: ${user.coins}`
+            });
+        }
+
+        if (cmd === "daily") {
+            user.coins += 50;
+            return sock.sendMessage(jid, {
+                text: "🎁 You received 50 coins!"
+            });
+        }
+
+        // ======================================
+        // GROUP COMMANDS
+        // ======================================
         if (cmd === "tagall") {
             return sock.sendMessage(jid, {
                 text: "👥 Tagging all members..."
@@ -267,14 +281,14 @@ Warnings: ${user.warns}
 
 AntiLink: ${group.antiLink}
 AntiSpam: ${group.antiSpam}
-Welcome: ${group.welcome}
+AI Mode: ${group.ai}
                 `
             });
         }
 
-        // ===============================
+        // ======================================
         // MENU
-        // ===============================
+        // ======================================
         if (cmd === "menu") {
             return sock.sendMessage(jid, {
                 text: `
@@ -283,11 +297,14 @@ Welcome: ${group.welcome}
 🎮 Fun:
 .dice .joke .anime
 
+🧠 AI:
+.ai
+
 🎵 Media:
 .lyrics .watermark .sticker
 
-🧠 AI:
-.ai
+💰 Economy:
+.balance .daily
 
 👤 Profile:
 .profile
@@ -303,5 +320,5 @@ Welcome: ${group.welcome}
     });
 }
 
-// ===============================
+// ======================================
 startBot();
