@@ -75,5 +75,11 @@ Before starting, make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/Prime-Khaled-Bot.git
-cd Prime-Khaled-Bot
+git clone https://github.com/YOUR_GITHUB_USERNAME/Prime-Khaled-Bot
+npm install
+node index.js
+📜 License
+
+This project is licensed under the MIT License.
+
+Copyright © 2026 Prime Khaled
