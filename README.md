@@ -1,130 +1,409 @@
+# 💀𓃵 PRIME KHALED BOT 𓃵💀
 
-# 🤖 Prime Khaled WhatsApp Bot – Ultra Pro
+### ⚡ Advanced WhatsApp Multi-Device Bot | Node.js + AI Automation ⚡
 
-A powerful WhatsApp bot built with **Baileys**, featuring AI, games, moderation, leveling, and full automation.
+<p align="center">
+  <img src="https://img.shields.io/badge/STATUS-ACTIVE-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AI-ENABLED-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/WHATSAPP-MULTI_DEVICE-green?style=for-the-badge" />
+</p>
+
+---
+
+# 🚀 OVERVIEW
+
+Prime Khaled Bot is an advanced WhatsApp Multi-Device bot built with Node.js, featuring AI-powered assistance, moderation tools, group management, entertainment commands, media utilities, and automation features.
 
 ---
 
 # ⚡ FEATURES
 
-## 🧠 AI SYSTEM
-- GPT-powered chat (.ai)
-- Smart responses
-- API integration ready (OpenAI)
+## 🤖 AI SYSTEM
+- AI Chat Assistant
+- Smart Question & Answer System
+- Text Summarization
+- Translation Support
+- AI Prompt Generation
 
-## 🛡️ SECURITY SYSTEM
-- Anti-link protection
-- Anti-spam protection
-- Auto moderation system
-- Group safety filters
+## 👑 OWNER COMMANDS
+- Bot Restart
+- Bot Shutdown
+- Broadcast Messages
+- Prefix Management
+- Public / Private Mode
+- User Block / Unblock
+- Bot Configuration Management
 
-## 👑 ADMIN FEATURES
-- Tagall command
-- Kick / ban system (extendable)
-- Group management tools
+## 👥 GROUP MANAGEMENT
+- Promote Members
+- Demote Members
+- Kick Members
+- Add Members
+- Tag All Members
+- Hidden Tag Messages
+- Open Group
+- Close Group
+- Group Information
+- Admin List
 
-## 🎮 GAMES
-- 🎲 Dice game (.dice)
-- ✂️ Rock Paper Scissors (.rps)
-- 🧠 Trivia system (expandable)
+## 🛡️ MODERATION SYSTEM
+- Anti-Link Protection
+- Anti-Spam Protection
+- Anti-Badword Filter
+- Auto Moderation
+- Warning System
+- Group Security Controls
 
-## ⭐ LEVEL SYSTEM
-- XP per message
-- Auto level up
-- Rank checker (.rank)
+## 🔍 CYBER SECURITY TOOLS
 
-## 👋 GROUP FEATURES
-- Welcome messages
-- Auto greeting system
-- Member tracking
+### Information Gathering
+- `.ipinfo <ip>`
+- `.dnslookup <domain>`
+- `.whois <domain>`
+- `.portcheck <host>`
+
+### Security Utilities
+- `.password <length>`
+- `.passstrength <password>`
+- `.hash <text>`
+- `.base64encode <text>`
+- `.base64decode <text>`
+
+### Network Tools
+- `.ping <host>`
+- `.traceroute <host>`
+- `.httpstatus <url>`
+- `.headers <url>`
+
+### Security Education
+- `.securitytips`
+- `.phishingguide`
+- `.cybernews`
+- `.owasp`
+- `.infosec`
+
+### Developer Utilities
+- `.jsonformat`
+- `.urlencode`
+- `.urldecode`
+- `.qrcode <text>`
+- `.uuid`
+
+### Security Checks
+- `.breachcheck <email>`
+- `.sslcheck <domain>`
+- `.securityscore <domain>`
+- `.techstack <website>`
+
+## 👋 WELCOME SYSTEM
+- Auto Welcome Messages
+- Auto Goodbye Messages
+- Custom Greetings
+- Welcome Card Support
+
+## 🎮 FUN COMMANDS
+- Dice Roll
+- Coin Flip
+- Truth
+- Dare
+- Trivia
+- Jokes
+- Quotes
+- Meme Commands
+- 8 Ball
+
+## 🧾 STICKER TOOLS
+- Image To Sticker
+- Sticker Commands
+- Emoji Mix
+- Sticker Metadata Tools
+
+## 🎵 MUSIC TOOLS
+- Song Search
+- Lyrics Lookup
+- Music Information
+
+## 📷 MEDIA TOOLS
+- Media Conversion
+- Image Tools
+- Video Tools
+- URL Generator
+- Caption Tools
+
+## 📊 UTILITY TOOLS
+- Ping
+- Uptime
+- Runtime
+- Weather Information
+- Time Lookup
+- User Information
+- Bot Information
+- Statistics
+
+## 🔐 LOGIN SYSTEM
+- QR Code Login
+- Pairing Code Login
+- Session Storage
+
+---
+
+# 📥 INSTALLATION
+
+```bash
+git clone https://github.com/YOUR_USERNAME/prime-khaled-bot.git
+cd prime-khaled-bot
+npm install
+node index.js
+```
+
+---
+
+# 📱 TERMUX SETUP (ANDROID)
+
+```bash
+pkg update && pkg upgrade -y
+
+pkg install git nodejs ffmpeg imagemagick -y
+
+git clone https://github.com/YOUR_USERNAME/prime-khaled-bot.git
+
+cd prime-khaled-bot
+
+npm install
+
+node index.js
+```
+
+### 🔥 KEEP BOT RUNNING
+
+```bash
+termux-wake-lock
+nohup node index.js &
+```
+
+---
+
+# 🐧 ARCH LINUX SETUP
+
+## Update System
+
+```bash
+sudo pacman -Syu
+```
+
+## Install Dependencies
+
+```bash
+sudo pacman -S git nodejs npm ffmpeg imagemagick
+```
+
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/prime-khaled-bot.git
+
+cd prime-khaled-bot
+```
+
+## Install Packages
+
+```bash
+npm install
+```
+
+## Start Bot
+
+```bash
+node index.js
+```
+
+---
+
+# 🐧 UBUNTU / VPS SETUP
+
+```bash
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install git nodejs npm ffmpeg imagemagick -y
+
+git clone https://github.com/YOUR_USERNAME/prime-khaled-bot.git
+
+cd prime-khaled-bot
+
+npm install
+
+node index.js
+```
+
+---
+
+# ☁️ CLOUD HOSTING
+
+## Render
+
+1. Fork Repository
+2. Connect GitHub Repository
+3. Create New Web Service
+4. Add Environment Variables
+5. Deploy
+
+### Start Command
+
+```bash
+node index.js
+```
+
+---
+
+## Railway
+
+1. Connect GitHub Repository
+2. Import Project
+3. Configure Environment Variables
+4. Deploy Project
+
+### Start Command
+
+```bash
+node index.js
+```
+
+---
+
+## VPS Hosting
+
+```bash
+node index.js
+```
+
+---
+
+# 🔥 PM2 SETUP (24/7 ONLINE)
+
+## Install PM2
+
+```bash
+npm install -g pm2
+```
+
+## Start Bot
+
+```bash
+pm2 start index.js --name prime-khaled-bot
+```
+
+## Save Process
+
+```bash
+pm2 save
+```
+
+## View Logs
+
+```bash
+pm2 logs
+```
+
+## Restart Bot
+
+```bash
+pm2 restart prime-khaled-bot
+```
+
+## Stop Bot
+
+```bash
+pm2 stop prime-khaled-bot
+```
+
+---
+
+# 📦 ENVIRONMENT VARIABLES
+
+Create a `.env` file:
+
+```env
+PREFIX=.
+OWNER_NUMBER=234XXXXXXXXXX
+BOT_NAME=Prime Khaled Bot
+OPENAI_API_KEY=YOUR_API_KEY
+```
 
 ---
 
 # 📁 PROJECT STRUCTURE
-services:
-  - type: worker
-    name: prime-khaled-bot
-    runtime: node
-    plan: free
-    buildCommand: npm install
-    startCommand: node index.js
-    envVars:
-      - key: OPENAI_KEY
-        sync: false
-      - key: NUMBER
-        sync: false
-      - key: OWNER
-        sync: false
-      🤖 Working on Prime Khaled Bot every week.
 
-Recent improvements include AI features, moderation tools, anti-spam protection, leveling systems, and deployment optimization. The goal is to build a fast, reliable, and feature-rich WhatsApp bot for communities and groups. 🚀
-# 🛠️ Setup & Installation
-
-## 📋 Prerequisites
-
-Before starting, make sure you have:
-
-- Node.js installed on your device
-- Git installed (for cloning the repository)
-- A WhatsApp account for pairing
+```text
+prime-khaled-bot/
+├── index.js
+├── package.json
+├── config.js
+├── commands/
+├── plugins/
+├── lib/
+├── sessions/
+├── assets/
+├── .env
+└── README.md
+```
 
 ---
 
-## 🚀 Step-by-Step Setup
+# ⚠️ TROUBLESHOOTING
 
-### 1. Clone the Repository
+### Module Not Found
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/Prime-Khaled-Bot.git
-cd Prime-Khaled-Bot
-Install Dependencies
-Bash
 npm install
-Start the Bot
-Bash
+```
+
+### Restart Bot
+
+```bash
 node index.js
-📱 Link Your WhatsApp
-Open WhatsApp.
-Tap Settings.
-Select Linked Devices.
-Tap Link a Device.
-Choose Link with Phone Number.
-Enter the pairing code shown in the terminal.
-✅ Bot Successfully Connected
-Once connected, you'll see:
-Plain text
-🤖 Prime Khaled Bot Connected Successfully
-🚀 System Online
-🟢 Ready to Receive Commands
-👑 Developer
-Prime Khaled
-🤖 Bot Name
-Prime Khaled Bot
-⚡ Version
-Ultra Pro Edition
-📜 License
+```
 
-This project is licensed under the MIT License.
+### PM2 Restart
 
-Copyright © 2026 Prime Khaled
-Prime Khaled Bot
+```bash
+pm2 restart prime-khaled-bot
+```
 
-Copyright © 2026 Prime Khaled.
-All Rights Reserved.
+### Pairing Issues
 
-This software is provided for educational, automation, and community management purposes only.
+Delete the session folder and reconnect.
 
-Users are responsible for complying with all applicable laws, regulations, and the Terms of Service of any platform on which this software is used, including WhatsApp.
+---
 
-The developer of Prime Khaled Bot is not responsible for:
-- Misuse of the software
-- Account bans or restrictions
-- Data loss
-- Damages resulting from modifications or third-party plugins
-- Activities that violate platform policies or local laws
+# 📋 REQUIREMENTS
 
-By using this software, you agree that you assume full responsibility for how it is configured and operated.
+- Node.js 18+
+- npm
+- Git
+- FFmpeg
+- ImageMagick
+- WhatsApp Account
+- Internet Connection
 
-Prime Khaled Bot, its name, branding, logos, and custom content may not be copied, impersonated, sold, or redistributed as an official version without permission from the owner.
+---
 
-For official releases and updates, use the authorized repository maintained by Prime Khaled.
+# 📊 SYSTEM STATUS
+
+| Component | Status |
+|-----------|---------|
+| AI Module | ✅ Active |
+| Group System | ✅ Active |
+| Moderation | ✅ Active |
+| Media Tools | ✅ Active |
+| Login System | ✅ Active |
+| Bot Engine | ✅ Online |
+
+---
+
+# 💀 PRIME KHALED BOT
+
+### ⚡ NEVER STOP BUILDING
+### ⚡ NEVER STOP LEARNING
+### ⚡ NEVER STOP EVOLVING
+
+## 𓃵 PRIME KHALED SYSTEM ONLINE 𓃵
